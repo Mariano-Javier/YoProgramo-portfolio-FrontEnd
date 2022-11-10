@@ -48,6 +48,6 @@
 }
 
 .img2 img:hover {
-    border-color:darkcyan;
+    border-color:black;
     transition: .7s;
 }

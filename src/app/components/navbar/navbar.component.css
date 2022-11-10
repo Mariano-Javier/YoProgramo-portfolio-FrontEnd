@@ -17,3 +17,13 @@
     color: darkcyan;
     padding: 0 10px;
 }
+
+
+@media (max-width: 576px) { 
+
+    .newSize{
+        justify-content: center;
+    }
+
+    
+    }
