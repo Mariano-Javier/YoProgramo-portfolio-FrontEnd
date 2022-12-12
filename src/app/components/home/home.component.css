@@ -1,0 +1,10 @@
+.card{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.profile-area{
+    padding: 30px 0;
+}
+
