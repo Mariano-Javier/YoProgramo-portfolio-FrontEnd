@@ -1,4 +1,5 @@
-export class Experiencia {
+export class Educacion {
+    
     id?: number;
     nombreE: string;
     descripcionE: string;

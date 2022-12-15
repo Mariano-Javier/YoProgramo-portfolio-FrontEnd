@@ -1,93 +1,34 @@
 <h2 class="text-center m-3">Experiencia</h2>
+<div class="text-center">
+  <button type="button" class="btn btn-light" routerLink="/nuevaexp" *ngIf="isLogged"> <i class="bi bi-plus-circle"></i>
+    Nueva experiencia
+  </button>
+</div>
+
 <section class="m-5">
     <ul class="timeline-with-icons">
-      <li class="timeline-item mb-5">
+      <li class="timeline-item mb-5" *ngFor="let item of expe">
         <span class="timeline-icon">
           <i class="fas fa-rocket text-primary fa-sm fa-fw"></i>
         </span>
         <div class="container-fluid">
           <div class="row">
             <div class="col-xl-2">
-              <img src="../../../assets/IMG/logoEX.png" class="rounded border border-2" alt="">
+              <img src={{item.urlE}} class="rounded border border-2" alt="">
             </div>
             <div class="col-xl-10">
-              <h5 class="fw-bold">Experiencia 1</h5>
-              <p class="text-muted mb-2 fw-bold">11 Marzo 2020</p>
-              <p class="text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                necessitatibus adipisci, ad alias, voluptate pariatur officia
-                repellendus repellat inventore fugit perferendis totam dolor
-                voluptas et corrupti distinctio maxime corporis optio?
-              </p>
+              <div class="d-flex justify-content-between flex-wrap">
+                <h5 class="fw-bold">{{item.nombreE}}</h5>
+                <div *ngIf="isLogged">
+                  <button class="mx-1 btn btn-light" routerLink="/editexp/{{item.id}}"><i class="bi bi-pencil"></i> Editar</button> <button class="mx-1 btn btn-light" (click)="delete(item.id)"><i class="bi bi-trash"></i>Borrar</button>
+                </div>
+              </div>
+              <p class="text-muted mb-2 fw-bold">{{item.fechaE}}</p>
+              <p class="text-muted">{{item.descripcionE}}</p>
             </div>
           </div>
         </div>
       </li>
-      <li class="timeline-item mb-5">
-        <span class="timeline-icon">
-          <i class="fas fa-hand-holding-usd text-primary fa-sm fa-fw"></i>
-        </span>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-2">
-              <img src="../../../assets/IMG/logoEX.png" class="rounded border border-2" alt="">
-            </div>
-            <div class="col-xl-10">
-              <h5 class="fw-bold">Experiencia 2</h5>
-              <p class="text-muted mb-2 fw-bold">19 Marzo 2020</p>
-              <p class="text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                necessitatibus adipisci, ad alias, voluptate pariatur officia
-                repellendus repellat inventore fugit perferendis totam dolor
-                voluptas et corrupti distinctio maxime corporis optio?
-              </p>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="timeline-item mb-5">
-        <span class="timeline-icon">
-          <i class="fas fa-users text-primary fa-sm fa-fw"></i>
-        </span>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-2">
-              <img src="../../../assets/IMG/logoEX.png" class="rounded border border-2" alt="">
-            </div>
-            <div class="col-xl-10">
-              <h5 class="fw-bold">Experiencia 3</h5>
-              <p class="text-muted mb-2 fw-bold">24 Junio 2020</p>
-              <p class="text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                necessitatibus adipisci, ad alias, voluptate pariatur officia
-                repellendus repellat inventore fugit perferendis totam dolor
-                voluptas et corrupti distinctio maxime corporis optio?
-              </p>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="timeline-item mb-5">
-        <span class="timeline-icon">
-          <i class="fas fa-money-bill-wave text-primary fa-sm fa-fw"></i>
-        </span>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-2">
-              <img src="../../../assets/IMG/logoEX.png" class="rounded border border-2" alt="">
-            </div>
-            <div class="col-xl-10">
-              <h5 class="fw-bold">Experiencia 4</h5>
-              <p class="text-muted mb-2 fw-bold">15 Octubre 2020</p>
-              <p class="text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                necessitatibus adipisci, ad alias, voluptate pariatur officia
-                repellendus repellat inventore fugit perferendis totam dolor
-                voluptas et corrupti distinctio maxime corporis optio?
-              </p>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
+
+     </ul>
   </section>
