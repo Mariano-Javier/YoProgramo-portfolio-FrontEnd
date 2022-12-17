@@ -1,24 +1,26 @@
 <!-- <div class="img1"><img src="../../../assets/IMG/bgb.jpg" alt="" /></div> -->
 <div class="imgBack"></div>
 
-<div class="row">
+<div class="row" *ngFor="let item of persona">
   <div class="img2 col-md-3 d-flex flex-column align-items-center">
-    <img src="../../../assets/IMG/profile-picture.jpg" alt="" />
+    <img src={{item.img}} alt="" />
     <div class="main-text">
       <!-- <h2>Mariano Javier</h2> -->
-      <h2>{{persona.nombre}} {{persona.apellido}}</h2>
-      <p>Full Stack Developer Jr..</p>
+      <h2>{{item.nombre}} {{item.apellido}}</h2>
+      <p>{{item.titulo}}</p>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-light" routerLink="/editacercade/{{item.id}}" *ngIf="isLogged"> <i class="bi bi-pencil"></i>
+        Editar persona
+      </button>
     </div>
   </div>
   <div class="col-md-9">
     <div class="m-3 p-2">
       <h2>Acerca de</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste dolorem harum, ullam iure
-        aspernatur quam dolor non est cumque hic aliquid molestias praesentium impedit ipsa quia. Enim,
-        numquam possimus.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste dolorem harum, ullam iure
-        aspernatur quam dolor non est cumque hic aliquid molestias praesentium impedit ipsa quia. Enim,
-        numquam possimus.</p>
+      
+      <pre>{{item.descripcion}}</pre> 
+      
     </div>
   </div>
 </div>

@@ -8,21 +8,21 @@
     <ul class="timeline-with-icons">
       <li class="timeline-item mb-5" *ngFor="let item of educacion">
         <span class="timeline-icon">
-          <i class="fas fa-rocket text-primary fa-sm fa-fw"></i>
+          <i class="fa-solid fa-graduation-cap text-primary fa-sm fa-fw"></i>
         </span>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-xl-2">
+            <div class="col-xl-2 mb-2 align-logo">
               <img src={{item.urlE}} class="rounded border border-2" alt="">
             </div>
             <div class="col-xl-10">
-              <div class="d-flex justify-content-between flex-wrap">
-                <h5 class="fw-bold">{{item.nombreE}}</h5>
-                <div *ngIf="isLogged">
+              <div class="d-flex justify-content-between flex-wrap cambio-flex">
+                <h5 class="fw-bold align-logo">{{item.nombreE}}</h5>
+                <div class=" align-logo" *ngIf="isLogged">
                   <button class="mx-1 btn btn-light" routerLink="/editedu/{{item.id}}"><i class="bi bi-pencil"></i> Editar</button> <button class="mx-1 btn btn-light" (click)="delete(item.id)"><i class="bi bi-trash"></i>Borrar</button>
                 </div>
               </div>
-              <p class="text-muted mb-2 fw-bold">{{item.fechaE}}</p>
+              <p class="text-muted my-2 fw-bold">{{item.fechaE}}</p>
               <p class="text-muted">{{item.descripcionE}}</p>
             </div>
           </div>
@@ -30,3 +30,5 @@
       </li>
      </ul>
   </section>
+
+

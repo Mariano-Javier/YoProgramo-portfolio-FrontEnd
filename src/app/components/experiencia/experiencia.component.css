@@ -26,3 +26,17 @@
     align-items: center;
     justify-content: center;
   }
+
+
+  
+@media (max-width: 1200px) {
+  .align-logo {
+    text-align: center;
+  }
+
+
+  .cambio-flex{
+
+    flex-direction: column;
+  }
+}

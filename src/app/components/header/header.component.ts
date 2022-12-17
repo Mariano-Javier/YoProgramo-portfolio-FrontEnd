@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
+import { TokenService } from 'src/app/services/token.service';
 import { Persona } from '../../model/persona.model';
 
 @Component({
@@ -9,12 +10,22 @@ import { Persona } from '../../model/persona.model';
 })
 export class HeaderComponent implements OnInit {
 
-  persona:Persona = new Persona("","","");
-
-  constructor(public personaService:PersonaService) { }
+  persona:Persona[] = [];
+  
+  constructor(public personaService:PersonaService, private tokenService: TokenService) { }
+  isLogged = false;
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data=>{this.persona=data})
+    this.cargarPersona();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  cargarPersona(){
+    this.personaService.lista().subscribe(data => {this.persona = data;})
   }
 
 }

@@ -1,0 +1,40 @@
+<section class="vh-100" *ngIf="persona">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card " style="border-radius: 1rem;">
+            <div class="card-body  text-center">
+                <h2 class="fw-bold mb-2 mt-3 text-uppercase">Actualizar persona</h2>
+                <p class=" mb-3">Todos los campos son obligatorios!</p>
+                <hr>
+                <form (ngSubmit)="onUpdate()"  novalidate #f="ngForm">
+                    <div class="input-group mb-3">
+                        <label for="nombre" class="input-group-text">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre de la persona"  id="nombre" name="nombre" [(ngModel)]="persona.nombre" maxlength="50" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="apellido" class="input-group-text">Apellido</label>
+                        <input type="text" class="form-control" placeholder="Apellido de la persona"  id="apellido" name="apellido" [(ngModel)]="persona.apellido" maxlength="30" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="descripcion" class="input-group-text">Descripción</label>
+                        <input type="text" class="form-control" placeholder="Descripción de la persona"  id="descripcion" name="descripcion" [(ngModel)]="persona.descripcion" maxlength="500" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="titulo" class="input-group-text">Título</label>
+                        <input type="text" class="form-control" placeholder="Ej:Full Stack Developer Jr"  id="titulo" name="titulo" [(ngModel)]="persona.titulo" maxlength="255" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="img" class="input-group-text">Imágen</label>
+                        <input type="text" class="form-control" placeholder="URL de la foto (116px x 116px)"  id="img" name="img" [(ngModel)]="persona.img"  maxlength="255" required>
+                    </div>
+
+                    <hr>
+                    <button class="btn btn-outline-success mb-3">Actualizar</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,35 @@
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card " style="border-radius: 1rem;">
+            <div class="card-body  text-center">
+                <h2 class="fw-bold mb-2 mt-3 text-uppercase">Nueva skill</h2>
+                <p class=" mb-3">Todos los campos son obligatorios!</p>
+                <hr>
+                <form (ngSubmit)="onCreate()"  novalidate #f="ngForm">
+                    <div class="input-group mb-3">
+                        <label for="nombre" class="input-group-text">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre de la skill"  id="nombre" name="nombre" [(ngModel)]="nombre" maxlength="50" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="porcentaje" class="input-group-text">Porcentaje</label>
+                        <input type="text" class="form-control" placeholder="Porcentaje en número entero"  id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" maxlength="30" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="colorInicio" class="input-group-text">Color Inicial</label>
+                        <input type="text" class="form-control" placeholder="Color en hexadecimal Ej:#4882c2"  id="colorInicio" name="colorInicio" [(ngModel)]="colorInicio" maxlength="250" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="colorFinal" class="input-group-text">Color Final</label>
+                        <input type="text" class="form-control" placeholder="Color en hexadecimal Ej:53a9ff"  id="colorFinal" name="colorFinal" [(ngModel)]="colorFinal" maxlength="255" required>
+                    </div>
+                    <hr>
+                    <button class="btn btn-outline-success mb-3">Agregar skill</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
