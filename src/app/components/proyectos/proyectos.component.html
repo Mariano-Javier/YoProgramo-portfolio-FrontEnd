@@ -1,39 +1,44 @@
 <h2 class="text-center m-3">Proyectos</h2>
 
+<div class="text-center">
+  <button type="button" class="btn btn-light" routerLink="/newproyecto" *ngIf="isLogged"> <i class="bi bi-plus-circle"></i>
+    Nuevo proyecto
+  </button>
+</div>
 <section class="sect-pt4 ">
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 d-flex flex-wrap justify-content-center">
 
-      <div class=" col-lg-4 col-sm-12">
+      <div class="col-lg-4 col-sm-12" *ngFor="let item of proyectos">
         <div class="work-box">
           <div  class="">
             <div class="work-img">
-              <img src="../../../assets/IMG/proyectos/work-1.jpg" alt="" class="img-fluid">
+              <img src={{item.img}}  alt="" class="img-fluid">
             </div>
           </div>
           <div class="work-content">
             <div class="row">
               <div class="col-sm-8">
-                <h2 class="w-title">Weather-Channel</h2>
+                <h2 class="w-title">{{item.nombre}}</h2>
                 <div class="w-more">
-                  <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
+                  <span class="w-ctegory">{{item.categoria}}</span> / <span class="w-date">{{item.fecha}}</span>
                 </div>
               </div>
               
-              <div class="col-sm-4">
+              <div class="col-sm-4 link-middle">
                 <div class="w-like">
-                  <a href="#"> <span class="bi bi-link"></span></a>
+                  <a href={{item.link}} target="_blank"> <span class="bi bi-link"></span></a>
                 </div>
               </div>
             </div>
-            <p>         Proyecto que arma una página que muestra las condiciones
-              meteorológicas de una ciudad, interactuando con la API del Weather
-              Channel.</p>
+            <p class="max-h">{{item.descripcion}}</p>
+          </div>
+          <div class="text-center" *ngIf="isLogged">
+            <button class="mx-1 mb-2 btn btn-light" routerLink="/editproyecto/{{item.id}}"><i class="bi bi-pencil"></i> Editar</button> <button class="mx-1 mb-2 btn btn-light" (click)="delete(item.id)"><i class="bi bi-trash"></i>Borrar</button>
           </div>
         </div>
       </div>
-
-      
     </div>
   </div>
 </section>
+

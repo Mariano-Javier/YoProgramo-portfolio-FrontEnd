@@ -9,6 +9,8 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
 import { NewHardsoftComponent } from './components/hardsoft-skills/new-hardsoft.component';
 import { EditHardsoftComponent } from './components/hardsoft-skills/edit-hardsoft.component';
 import { EditHeaderComponent } from './components/header/edit-header.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:'newskill', component: NewHardsoftComponent},
   {path:'editskill/:id', component:EditHardsoftComponent},
   {path:'editacercade/:id', component:EditHeaderComponent},
+  {path:'newproyecto', component: NewProyectoComponent},
+  {path:'editproyecto/:id', component:EditProyectoComponent},
   {path:'**', redirectTo:'',pathMatch:'full'}
 ];
 
