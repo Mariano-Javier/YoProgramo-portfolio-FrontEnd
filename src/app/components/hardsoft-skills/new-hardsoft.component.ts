@@ -15,6 +15,12 @@ export class NewHardsoftComponent implements OnInit {
   colorInicio:string;
   colorFinal:string;
 
+  formData: any;
+
+  handleSubmit(e: FormData) {
+    this.formData = { ...e };
+  }
+
   constructor(private skillS: SkillService, private router: Router) { }
 
   ngOnInit(): void {
