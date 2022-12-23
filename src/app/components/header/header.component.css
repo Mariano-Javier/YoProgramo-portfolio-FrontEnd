@@ -6,7 +6,7 @@
 } */
 
 .imgBack {
-  background-image: url(../../../assets/IMG/bgb.jpg);
+  background-image: url(../../../assets/IMG/codeback.jpg);
   height: 30vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,7 +46,7 @@
 }
 
 .img2 img:hover {
-  border-color: black;
+  border-color: rgb(0, 86, 167);
   transition: 0.7s;
 }
 
