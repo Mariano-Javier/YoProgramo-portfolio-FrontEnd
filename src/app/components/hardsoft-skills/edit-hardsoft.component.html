@@ -7,25 +7,25 @@
                 <h2 class="fw-bold mb-2 mt-3 text-uppercase">Actualizar skill</h2>
                 <p class=" mb-3">Todos los campos son obligatorios!</p>
                 <hr>
-                <form (ngSubmit)="onUpdate()"  novalidate #f="ngForm">
+                <form (ngSubmit)="onUpdate();handleSubmit(f.value)"  novalidate #f="ngForm">
                     <div class="input-group mb-3">
                         <label for="nombre" class="input-group-text">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Nombre de la skill"  id="nombre" name="nombre" [(ngModel)]="skill.nombre" maxlength="50" required>
+                        <input type="text" class="form-control" placeholder="Nombre de la skill"  id="nombre" name="nombre" [(ngModel)]="skill.nombre" maxlength="50" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="porcentaje" class="input-group-text">Porcentaje</label>
-                        <input type="text" class="form-control" placeholder="Porcentaje en número entero"  id="porcentaje" name="porcentaje" [(ngModel)]="skill.porcentaje" maxlength="30" required>
+                        <input type="text" class="form-control" placeholder="Porcentaje en número entero"  id="porcentaje" name="porcentaje" [(ngModel)]="skill.porcentaje" maxlength="30" pattern="^[1-9][0-9]?$|^100$" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="colorInicio" class="input-group-text">Color Inicial</label>
-                        <input type="text" class="form-control" placeholder="Color en hexadecimal Ej:#4882c2"  id="colorInicio" name="colorInicio" [(ngModel)]="skill.colorInicio" maxlength="250" required>
+                        <input type="text" class="form-control" placeholder="Color en hexadecimal Ej:#4882c2"  id="colorInicio" name="colorInicio" [(ngModel)]="skill.colorInicio" maxlength="250" pattern="^#[A-Fa-f0-9]{6}$" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="colorFinal" class="input-group-text">Color Final</label>
-                        <input type="text" class="form-control" placeholder="Color en hexadecimal Ej:53a9ff"  id="colorFinal" name="colorFinal" [(ngModel)]="skill.colorFinal" maxlength="255" required>
+                        <input type="text" class="form-control" placeholder="Color en hexadecimal Ej:53a9ff"  id="colorFinal" name="colorFinal" [(ngModel)]="skill.colorFinal" maxlength="255" pattern="^#[A-Fa-f0-9]{6}$" ngModel required>
                     </div>
                     <hr>
-                    <button class="btn btn-outline-success mb-3">Actualizar</button>
+                    <button class="btn btn-outline-success mb-3" [disabled]="f.status === 'INVALID'">Actualizar</button>
                 </form>
             </div>
           </div>

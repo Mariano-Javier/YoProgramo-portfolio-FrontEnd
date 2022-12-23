@@ -33,4 +33,10 @@ export class NewExperienciaComponent implements OnInit {
     )
   }
 
+  formData: any;
+
+  handleSubmit(e: FormData) {
+    this.formData = { ...e };
+  }
+
 }

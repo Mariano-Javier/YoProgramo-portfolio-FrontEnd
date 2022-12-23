@@ -36,4 +36,10 @@ export class EditExperienciaComponent implements OnInit {
         this.router.navigate(['']);
       })
   }
+
+  formData: any;
+
+  handleSubmit(e: FormData) {
+    this.formData = { ...e };
+  }
 }

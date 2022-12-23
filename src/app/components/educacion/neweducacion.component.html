@@ -7,25 +7,25 @@
                 <h2 class="fw-bold mb-2 mt-3 text-uppercase">Nueva educación</h2>
                 <p class=" mb-3">Todos los campos son obligatorios!</p>
                 <hr>
-                <form (ngSubmit)="onCreate()"  novalidate #f="ngForm">
+                <form (ngSubmit)="onCreate();handleSubmit(f.value)"  novalidate #f="ngForm">
                     <div class="input-group mb-3">
                         <label for="nombreE" class="input-group-text">Título</label>
-                        <input type="text" class="form-control" placeholder="Nombre de la Institución"  id="nombreE" name="nombreE" [(ngModel)]="nombreE" maxlength="50" required>
+                        <input type="text" class="form-control" placeholder="Nombre de la Institución"  id="nombreE" name="nombreE" [(ngModel)]="nombreE" maxlength="50" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="fechaE" class="input-group-text">Fecha</label>
-                        <input type="text" class="form-control" placeholder="Inicio y fin del cursado"  id="fechaE" name="fechaE" [(ngModel)]="fechaE" maxlength="30" required>
+                        <input type="text" class="form-control" placeholder="Inicio y fin del cursado"  id="fechaE" name="fechaE" [(ngModel)]="fechaE" maxlength="30" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="descripcionE" class="input-group-text">Descripción</label>
-                        <input type="text" class="form-control" placeholder="Descripción del curso"  id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" maxlength="250" required>
+                        <input type="text" class="form-control" placeholder="Descripción del curso"  id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" maxlength="250" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="urlE" class="input-group-text">Foto</label>
-                        <input type="text" class="form-control" placeholder="URL de la foto (116px x 116px)"  id="urlE" name="urlE" [(ngModel)]="urlE" maxlength="255" required>
+                        <input type="text" class="form-control" placeholder="URL de la foto (116px x 116px)"  id="urlE" name="urlE" [(ngModel)]="urlE" pattern='(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))' maxlength="255" ngModel required>
                     </div>
                     <hr>
-                    <button class="btn btn-outline-success mb-3">Agregar educación</button>
+                    <button class="btn btn-outline-success mb-3" [disabled]="f.status === 'INVALID'">Agregar educación</button>
                 </form>
             </div>
           </div>

@@ -37,4 +37,10 @@ export class EditHardsoftComponent implements OnInit {
       })
   }
 
+  formData: any;
+
+  handleSubmit(e: FormData) {
+    this.formData = { ...e };
+  }
+
 }

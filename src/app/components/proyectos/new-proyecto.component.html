@@ -7,33 +7,33 @@
                 <h2 class="fw-bold mb-2 mt-3 text-uppercase">Nuevo proyecto</h2>
                 <p class=" mb-3">Todos los campos son obligatorios!</p>
                 <hr>
-                <form (ngSubmit)="onCreate()"  novalidate #f="ngForm">
+                <form (ngSubmit)="onCreate();handleSubmit(f.value)"  novalidate #f="ngForm">
                     <div class="input-group mb-3">
                         <label for="nombre" class="input-group-text">Título</label>
-                        <input type="text" class="form-control" placeholder="Nombre del proyecto"  id="nombre" name="nombre" [(ngModel)]="nombre" maxlength="50" required>
+                        <input type="text" class="form-control" placeholder="Nombre del proyecto"  id="nombre" name="nombre" [(ngModel)]="nombre" maxlength="50" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="descripcion" class="input-group-text">Descripción</label>
-                        <input type="text" class="form-control" placeholder="Descripción del proyecto"  id="descripcion" name="descripcion" [(ngModel)]="descripcion" maxlength="250" required>
+                        <input type="text" class="form-control" placeholder="Descripción del proyecto"  id="descripcion" name="descripcion" [(ngModel)]="descripcion" maxlength="250" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="categoria" class="input-group-text">Categoria</label>
-                        <input type="text" class="form-control" placeholder="Ej: Web Design"  id="categoria" name="categoria" [(ngModel)]="categoria" maxlength="30" required>
+                        <input type="text" class="form-control" placeholder="Ej: Web Design"  id="categoria" name="categoria" [(ngModel)]="categoria" maxlength="30" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="fecha" class="input-group-text">Fecha</label>
-                        <input type="text" class="form-control" placeholder="Inicio y fin del proyecto"  id="fecha" name="fecha" [(ngModel)]="fecha" maxlength="30" required>
+                        <input type="text" class="form-control" placeholder="Inicio y fin del proyecto"  id="fecha" name="fecha" [(ngModel)]="fecha" maxlength="30" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="img" class="input-group-text">Imagen</label>
-                        <input type="text" class="form-control" placeholder="URL de la imagen del proyecto"  id="img" name="img" [(ngModel)]="img" maxlength="250" required>
+                        <input type="text" class="form-control" placeholder="URL de la imagen del proyecto"  id="img" name="img" [(ngModel)]="img" maxlength="250" pattern='(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))' ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="link" class="input-group-text">Link</label>
-                        <input type="text" class="form-control" placeholder="URL del github o website del proyecto"  id="link" name="link" [(ngModel)]="link" maxlength="255" required>
+                        <input type="text" class="form-control" placeholder="URL del github o website del proyecto"  id="link" name="link" [(ngModel)]="link" maxlength="255" pattern='^(https:|http:|www\.)\S*' ngModel required>
                     </div>
                     <hr>
-                    <button class="btn btn-outline-success mb-3">Agregar proyecto</button>
+                    <button class="btn btn-outline-success mb-3" [disabled]="f.status === 'INVALID'">Agregar proyecto</button>
                 </form>
             </div>
           </div>

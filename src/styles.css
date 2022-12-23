@@ -3,3 +3,20 @@ body{
     background-color: #f7f7f7;
 }
 
+
+/* Validacion */
+
+.ng-touched.ng-valid[required],
+.ng-valid.required {
+  border-bottom: 3px solid #42a948; /* green */
+}
+
+.ng-touched.ng-invalid:not(form) {
+  border-bottom: 3px solid #df3c39; /* red */
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}
+
+/* Fin validacion */

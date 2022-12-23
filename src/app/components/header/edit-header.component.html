@@ -7,30 +7,30 @@
                 <h2 class="fw-bold mb-2 mt-3 text-uppercase">Actualizar persona</h2>
                 <p class=" mb-3">Todos los campos son obligatorios!</p>
                 <hr>
-                <form (ngSubmit)="onUpdate()"  novalidate #f="ngForm">
+                <form (ngSubmit)="onUpdate();handleSubmit(f.value)"  novalidate #f="ngForm">
                     <div class="input-group mb-3">
                         <label for="nombre" class="input-group-text">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Nombre de la persona"  id="nombre" name="nombre" [(ngModel)]="persona.nombre" maxlength="50" required>
+                        <input type="text" class="form-control" placeholder="Nombre de la persona"  id="nombre" name="nombre" [(ngModel)]="persona.nombre" maxlength="50" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="apellido" class="input-group-text">Apellido</label>
-                        <input type="text" class="form-control" placeholder="Apellido de la persona"  id="apellido" name="apellido" [(ngModel)]="persona.apellido" maxlength="30" required>
+                        <input type="text" class="form-control" placeholder="Apellido de la persona"  id="apellido" name="apellido" [(ngModel)]="persona.apellido" maxlength="30" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="descripcion" class="input-group-text">Descripción</label>
-                        <input type="text" class="form-control" placeholder="Descripción de la persona"  id="descripcion" name="descripcion" [(ngModel)]="persona.descripcion" maxlength="500" required>
+                        <input type="text" class="form-control" placeholder="Descripción de la persona"  id="descripcion" name="descripcion" [(ngModel)]="persona.descripcion" maxlength="500" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="titulo" class="input-group-text">Título</label>
-                        <input type="text" class="form-control" placeholder="Ej:Full Stack Developer Jr"  id="titulo" name="titulo" [(ngModel)]="persona.titulo" maxlength="255" required>
+                        <input type="text" class="form-control" placeholder="Ej:Full Stack Developer Jr"  id="titulo" name="titulo" [(ngModel)]="persona.titulo" maxlength="255" ngModel required>
                     </div>
                     <div class="input-group mb-3">
                         <label for="img" class="input-group-text">Imágen</label>
-                        <input type="text" class="form-control" placeholder="URL de la foto (116px x 116px)"  id="img" name="img" [(ngModel)]="persona.img"  maxlength="255" required>
+                        <input type="text" class="form-control" placeholder="URL de la foto (116px x 116px)"  id="img" name="img" [(ngModel)]="persona.img"  maxlength="255" pattern='(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))' ngModel required>
                     </div>
 
                     <hr>
-                    <button class="btn btn-outline-success mb-3">Actualizar</button>
+                    <button class="btn btn-outline-success mb-3" [disabled]="f.status === 'INVALID'">Actualizar</button>
                 </form>
             </div>
           </div>

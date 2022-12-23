@@ -42,4 +42,10 @@ export class EditHeaderComponent implements OnInit {
 
   }
 
+  formData: any;
+
+  handleSubmit(e: FormData) {
+    this.formData = { ...e };
+  }
+
 }
