@@ -7,7 +7,7 @@
 <section class="m-5">
     <ul class="timeline-with-icons">
       <li class="timeline-item mb-5" *ngFor="let item of educacion">
-        <span class="timeline-icon">
+        <span class="timeline-icon d-none d-sm-flex">
           <i class="fa-solid fa-graduation-cap text-primary fa-sm fa-fw"></i>
         </span>
         <div class="container-fluid">
@@ -25,6 +25,7 @@
               <p class="text-muted my-2 fw-bold">{{item.fechaE}}</p>
               <p class="text-muted">{{item.descripcionE}}</p>
             </div>
+            <hr class="base-linea">
           </div>
         </div>
       </li>
