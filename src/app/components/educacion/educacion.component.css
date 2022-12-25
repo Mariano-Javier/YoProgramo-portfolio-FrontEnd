@@ -44,6 +44,11 @@ ul {
   .cambio-flex {
     flex-direction: column;
   }
+
+  .btn-margin{
+    margin-bottom: 1rem;
+  
+    }
 }
 
 @media (max-width: 576px) {
