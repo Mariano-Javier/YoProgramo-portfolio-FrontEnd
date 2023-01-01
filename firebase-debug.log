@@ -1,0 +1,21 @@
+[debug] [2023-01-01T21:27:18.564Z] ----------------------------------------------------------------------
+[debug] [2023-01-01T21:27:18.567Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mariano\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-01T21:27:18.567Z] CLI Version:   11.15.0
+[debug] [2023-01-01T21:27:18.568Z] Platform:      win32
+[debug] [2023-01-01T21:27:18.568Z] Node Version:  v16.16.0
+[debug] [2023-01-01T21:27:18.569Z] Time:          Sun Jan 01 2023 18:27:18 GMT-0300 (Argentina Standard Time)
+[debug] [2023-01-01T21:27:18.569Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-01T21:27:18.580Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-01T21:27:18.581Z] > authorizing via signed-in user (mariano.xcr@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Mariano\Desktop\argprog archivos\ProyectoIntegrador
+
