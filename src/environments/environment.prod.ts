@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  eURl: 'https://backend-vh6w.onrender.com/'
 };

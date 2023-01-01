@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   eURl: 'http://localhost:8080/',
-  // eURl: 'http://aca va la url del back'
+  
 };
 
 /*
